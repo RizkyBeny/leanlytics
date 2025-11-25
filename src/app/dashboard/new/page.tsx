@@ -58,21 +58,21 @@ export default function NewResearchPage() {
         <div className="min-h-screen bg-white flex font-sans text-gray-900">
             {/* Sidebar */}
             <aside className="w-64 border-r border-gray-100 flex flex-col fixed h-full bg-white z-10">
-                <div className="p-6 flex items-center gap-2 font-bold text-xl tracking-tight">
+                <div className="p-2 flex items-center gap-2 font-bold text-xl tracking-tight">
                     <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center text-white">
                         <Sparkles size={18} />
                     </div>
                     Leanlytics
                 </div>
 
-                <div className="px-6 py-4">
+                <div className="p-2">
                     <Link href="/dashboard" className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 transition-colors">
                         <ArrowLeft size={16} />
                         Back to home
                     </Link>
                 </div>
 
-                <nav className="flex-1 px-6 space-y-6 mt-4">
+                <nav className="flex-1 px-2 space-y-6 mt-4">
                     <div className="relative pl-4 border-l-2 border-gray-100 space-y-8">
                         <div className="relative">
                             <div className="absolute -left-[21px] top-0 w-6 h-6 bg-gray-900 rounded text-white flex items-center justify-center text-xs font-bold">1</div>
