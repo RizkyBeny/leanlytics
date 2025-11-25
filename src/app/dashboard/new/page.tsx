@@ -3,7 +3,7 @@
 import { useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { authClient } from '@/lib/auth-client'
+//import { authClient } from '@/lib/auth-client'
 import {
     ArrowLeft,
     Sparkles,
@@ -18,7 +18,7 @@ export default function NewResearchPage() {
     const router = useRouter()
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
-    const { data: session } = authClient.useSession()
+    //const { data: session } = authClient.useSession()
     const fileInputRef = useRef<HTMLInputElement>(null)
     const [selectedFile, setSelectedFile] = useState<File | null>(null)
 
@@ -105,7 +105,7 @@ export default function NewResearchPage() {
                         <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-500">
                             <User size={16} />
                         </div>
-                        <span className="text-sm font-medium">{session?.user?.name || 'User'}</span>
+                        <span className="text-sm font-medium">User</span>
                         <ChevronDown size={16} className="text-gray-400" />
                     </div>
                 </header>
@@ -123,7 +123,7 @@ export default function NewResearchPage() {
                         </p>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
+                    <form className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
                         <h2 className="font-bold text-lg mb-1">Research Plan</h2>
                         <p className="text-sm text-gray-400 mb-6">Please add your survey title and description below</p>
 

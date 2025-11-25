@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { authClient } from '@/lib/auth-client'
+//import { authClient } from '@/lib/auth-client'
 import {
     LayoutGrid,
     BarChart2,
@@ -28,7 +28,7 @@ interface Job {
 export default function DashboardPage() {
     const [jobs, setJobs] = useState<Job[]>([])
     const [loading, setLoading] = useState(true)
-    const { data: session } = authClient.useSession()
+    // const { data: session } = authClient.useSession()
 
     useEffect(() => {
         fetch('/api/research')
@@ -99,7 +99,7 @@ export default function DashboardPage() {
                         <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-500">
                             <User size={16} />
                         </div>
-                        <span className="text-sm font-medium">{session?.user?.name || 'User'}</span>
+                        <span className="text-sm font-medium">User</span>
                         <ChevronDown size={16} className="text-gray-400" />
                     </div>
                 </header>
@@ -124,7 +124,7 @@ export default function DashboardPage() {
                     {/* Welcome Section */}
                     <div>
                         <div className="text-sm text-gray-500 mb-1">My Workspace</div>
-                        <h1 className="text-2xl font-bold text-gray-900">Welcome, {session?.user?.name || 'User'}</h1>
+                        <h1 className="text-2xl font-bold text-gray-900">Welcome, User</h1>
                     </div>
 
                     {/* Action Cards */}
@@ -196,8 +196,8 @@ export default function DashboardPage() {
                                                 <div className="flex items-center gap-3">
                                                     <h4 className="font-bold text-gray-900">{job.topic}</h4>
                                                     <span className={`text-xs px-2 py-0.5 rounded font-medium ${job.status === 'COMPLETED' ? 'bg-green-100 text-green-700' :
-                                                            job.status === 'FAILED' ? 'bg-red-100 text-red-700' :
-                                                                'bg-orange-100 text-orange-700'
+                                                        job.status === 'FAILED' ? 'bg-red-100 text-red-700' :
+                                                            'bg-orange-100 text-orange-700'
                                                         }`}>
                                                         {job.status === 'PENDING' ? 'Draft' : job.status}
                                                     </span>
